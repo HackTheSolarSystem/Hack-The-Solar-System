@@ -1,4 +1,5 @@
 let sun
+let mars
 let asteroids = []
 
 function generateAsteroidBelt() {
@@ -18,6 +19,7 @@ function generateAsteroidBelt() {
 function setup() {
     createCanvas(windowWidth, windowHeight)
     sun = new Astro(data.sun)
+		// mars = new Astro(data.satellites[0])
     sun.spawnSatellites()
     generateAsteroidBelt()
 }
