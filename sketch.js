@@ -265,73 +265,73 @@ document.addEventListener("DOMContentLoaded", function(event) {
           switch(planetValues){
             case "Earth":
                 newDiameter = 30
-                earthDistance = distance.value*.20
+                earthDistance = distance.value
                 newSpeed = (earthSpeed- planetDist)/10
                 c = color(102,179,255);
-                newEarth = new planet(c, earthDistance, newDiameter, newSpeed/4 , "Earth");
+                newEarth = new planet(c, earthDistance, newDiameter, newSpeed/2 , "Earth");
                 planets.splice(3,1)
                 planets.splice(3,0,newEarth)
               break;
             case "Mercury":
                 newDiameter = 20
-                mercuryDistance = distance.value*.20
+                mercuryDistance = distance.value
                 newSpeed = (mercurySpeed- planetDist)/10
                 c = color(128,128,128);
-                newEarth = new planet(c, mercuryDistance, newDiameter, newSpeed/4 , "Mercury");
+                newEarth = new planet(c, mercuryDistance, newDiameter, newSpeed/2 , "Mercury");
                 planets.splice(1,1)
                 planets.splice(1,0,newEarth)
                 break;
             case "Venus":
                 newDiameter = 25
-                venusDistance = distance.value*.20
+                venusDistance = distance.value
                 newSpeed = (venusSpeed- planetDist)/10
                 c = color(255,179,102);
-                newEarth = new planet(c, venusDistance, newDiameter, newSpeed/4 , "Venus");
+                newEarth = new planet(c, venusDistance, newDiameter, newSpeed/2 , "Venus");
                 planets.splice(2,1)
                 planets.splice(2,0,newEarth)
               break;
             case "Mars":
                 newDiameter = 16.25
-                marsDistance = distance.value*.20
+                marsDistance = distance.value
                 newSpeed = (marsSpeed- planetDist)/10
                 c = color(255,102,102);
-                newEarth = new planet(c, marsDistance, newDiameter, newSpeed/4 , "Mars");
+                newEarth = new planet(c, marsDistance, newDiameter, newSpeed/2 , "Mars");
                 planets.splice(4,1)
                 planets.splice(4,0,newEarth)
               break;
                 case "Neptune":
                 newDiameter = 38
-                neptuneDistance = distance.value*.20
+                neptuneDistance = distance.value
                 newSpeed = (neptuneSpeed- planetDist)/10
                 c = color(0,51,204);
-                newEarth = new planet(c, neptuneDistance, newDiameter, newSpeed/4 , "Neptune");
+                newEarth = new planet(c, neptuneDistance, newDiameter, newSpeed/2 , "Neptune");
                 planets.splice(8,1)
                 planets.splice(8,0,newEarth)
               break;
             case "Jupiter":
                 newDiameter = 71.66
-                jupiterDistance = distance.value*.20
+                jupiterDistance = distance.value
                 newSpeed = (jupiterSpeed- planetDist)/10
                 c = color(204,102,0);
-                newEarth = new planet(c, jupiterDistance, newDiameter, newSpeed/4 , "Jupiter");
+                newEarth = new planet(c, jupiterDistance, newDiameter, newSpeed/2 , "Jupiter");
                 planets.splice(5,1)
                 planets.splice(5,0,newEarth)
               break;
             case "Uranus":
                 newDiameter = 38
-                uranusDistance = distance.value*.20
+                uranusDistance = distance.value
                 newSpeed = (uranusSpeed - planetDist)/10
                 c = color(0,153,204);
-                newEarth = new planet(c, uranusDistance, newDiameter, newSpeed/4 , "Uranus");
+                newEarth = new planet(c, uranusDistance, newDiameter, newSpeed/2 , "Uranus");
                 planets.splice(7,1)
                 planets.splice(7,0,newEarth)
               break;
             case "Saturn":
                 newDiameter = 51
-                saturnDistance = distance.value*.20
+                saturnDistance = distance.value
                 newSpeed = (saturnSpeed- planetDist)/10
                 c = color(230,255,153);
-                newEarth = new planet(c, saturnDistance, newDiameter, newSpeed/4 , "Saturn");
+                newEarth = new planet(c, saturnDistance, newDiameter, newSpeed/2 , "Saturn");
                 planets.splice(6,1)
                 planets.splice(6,0,newEarth)
               break;
