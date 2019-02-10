@@ -15,7 +15,7 @@ var mercurySpeed =  (0.02 * -1) * (12 / 8);
 var venousSpeed = (0.02 * -1) * (12 / 7);
 var earthSpeed = (0.02 * -1)
 var marsSpeed = (0.02 * -1)/2
-var jupiterSpeed = (0.02 * -1) / (12*3);
+var jupiterSpeed = (0.02 * -1) / (12*4);
 var saturnSpeed = (0.02 * -1) / 30*3;
 var uranusSpeed = (0.02 * -1) / 84*3;
 var neptuneSpeed = (0.02 * -1) / 165*3;
@@ -33,8 +33,11 @@ var neputuneMass = 102
 var massConst = Math.pow(10, 24)
 
 let ee = document.getElementById("distance")
+let fontsize = 16;
 function setup() {
     createCanvas(window.innerWidth,window.innerHeight)
+    textSize(fontsize);
+    textAlign(LEFT,BOTTOM)
     createPlanets()
     createAsteroidBelt()
 
@@ -70,7 +73,7 @@ function createPlanets() {
 
 function createSun() {
     var c = color(255,255,102);
-    let sun = new planet(c, 0, sunDiameter, 0);
+    let sun = new planet(c, 0, sunDiameter, 0, "Sun");
     this.planets.push(sun);
 };
 
@@ -113,6 +116,8 @@ function createMars() {
 }
 
 function createJupiter() {
+  let jupiterDiameter = mercuryDia*29.27
+    let distance = 320
     let diameter = 71.66
     var c = color(204,102,0);
     let s = jupiterSpeed;
