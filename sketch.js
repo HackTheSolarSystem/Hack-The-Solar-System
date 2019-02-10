@@ -51,7 +51,7 @@ function createMercury() {
     let distance = 140
     let diameter = 20
     var c = color(128,128,128);
-    let s = earthSpeed * (12 / 3);
+    let s = earthSpeed * (12 / 8);
     var mercury = new planet(c, distance, diameter, s);
 
     this.planets.push(mercury);
@@ -71,8 +71,8 @@ function createEarth() {
     let distance = 200
     let diameter = 30
     var c = color(102,179,255);
-    let earth = new planet(c, distance, diameter, earthSpeed*2);
-    earth.addMoon();
+    let earth = new planet(c, distance, diameter, earthSpeed*1);
+    earth.addMediumMoon();
 
     this.planets.push(earth);
 }
@@ -83,8 +83,8 @@ function createMars() {
     var c = color(255,102,102);
     let s = earthSpeed / 2;
     var mars = new planet(c, distance, diameter, s);
-    mars.addMoon();
-    mars.addMoon();
+    mars.addMediumMoon();
+    mars.addMediumMoon();
     this.planets.push(mars);
 }
 
@@ -94,6 +94,12 @@ function createJupiter() {
     var c = color(204,102,0);
     let s = earthSpeed / 12*3;
     var jupiter = new planet(c, distance, diameter, s);
+    jupiter.addMoon();
+    jupiter.addMoon();
+    jupiter.addMoon();
+    jupiter.addMoon();
+    jupiter.addMoon();
+    jupiter.addMoon();
     this.planets.push(jupiter);
 }
 
@@ -103,7 +109,12 @@ function createSaturn() {
     var c = color(230, 255, 153);
     let s = earthSpeed / 30*3;
     var saturn = new planet(c, distance, diameter, s);
-
+    saturn.addSmallMoon();
+    saturn.addSmallMoon();
+    saturn.addSmallMoon();
+    saturn.addSmallMoon();
+    saturn.addSmallMoon();
+    saturn.addSmallMoon();
     this.planets.push(saturn);
 }
 
@@ -113,7 +124,10 @@ function createUranus() {
     var c = color(0, 153, 204);
     let s = earthSpeed / 84*3;
     var uranus = new planet(c, distance, diameter, s);
-
+    uranus.addSmallMoon();
+    uranus.addSmallMoon();
+    uranus.addSmallMoon();
+    uranus.addSmallMoon();
     this.planets.push(uranus);
 }
 
@@ -123,7 +137,9 @@ function createNeptune() {
     var c = color(0, 51, 204);
     let s = earthSpeed / 165*3;
     var neptune = new planet(c, distance, diameter, s);
-
+    neptune.addSmallMoon();
+    neptune.addSmallMoon();
+    neptune.addSmallMoon();
     this.planets.push(neptune);
 }
 
@@ -154,22 +170,3 @@ function draw() {
     })
 
 }
-
-
-// mercury
-// 57.9 million km        200
-// venus
-// 108.2 million km       230
-// earth
-// 149.6 million km       260
-// mars
-// 227.9 million km       330
-// jupiter
-// 778.3 million km       410
-// saturn
-// 1,427.0 million km     490
-// uranus
-// 2,871.0 million km     580
-// neptune
-// 4,497.1 million km     700
-//

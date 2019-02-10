@@ -10,10 +10,26 @@ function planet(c, d, r, s) {
     var moons = [];
 
     this.addMoon = function() {
-        var md = distance / random(2,8);
-        var mr = radius / random(3,5);
+        var md = distance / random(8,6);
+        var mr = radius / random(9,3);
         var ms = speed * random(1, 4);
-        var moon = new planet(250, md, mr, ms);
+        var moon = new planet(250, md+4, mr, ms*2);
+        moons.push(moon);
+    };
+
+    this.addSmallMoon = function() {
+        var md = distance / random(6,4);
+        var mr = radius / random(9,3);
+        var ms = speed * random(6, 14);
+        var moon = new planet(250, md/2, mr, ms*2);
+        moons.push(moon);
+    };
+
+    this.addMediumMoon = function() {
+        var md = distance / random(8,6);
+        var mr = radius / random(9,3);
+        var ms = speed * random(1, 4);
+        var moon = new planet(250, md+4, mr, ms);
         moons.push(moon);
     };
 
