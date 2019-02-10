@@ -5,7 +5,7 @@ var sunDiameter = 150;
 var numStars = 1000;
 var earthSpeed = 0.02 * -1;
 let asteroids = [];
-
+let ee = document.getElementById("distance")
 function setup() {
     createCanvas(window.innerWidth,window.innerHeight)
     createPlanets()
@@ -164,3 +164,65 @@ function draw() {
     })
 
 }
+<<<<<<< HEAD
+=======
+function hello(){
+    console.log(ee.value)
+}
+document.addEventListener("DOMContentLoaded", function(event) {
+      let planets = document.getElementById('planets')
+      let mass = document.getElementById('mass')
+      let distance = document.getElementById('distance')
+
+      let submitButton = document.getElementById('mass-form')
+      //function to take in planet selected for mass change
+      function planetForm(e){
+          console.log(e.target.value)
+      }
+      //mass change form
+      function massForm(e){
+          console.log(e.target.value)
+      }
+      function distanceForm(e){
+          console.log(e.target.value)
+      }
+
+      function submitMassForm(e){
+          e.preventDefault()
+          let planet = planets.value
+          let planetMass = mass.value
+
+          let planetDist = distance.value
+          console.log(planetMass,planet,planetDist)
+      }
+
+
+
+      function submitDistanceForm(){
+          console.log(e.target.value)
+      }
+
+      planets.addEventListener('change',planetForm)
+      mass.addEventListener('change',massForm)
+      distance.addEventListener('change',distanceForm)
+      submitButton.addEventListener('submit',submitMassForm)
+})
+
+// mercury
+// 57.9 million km        200
+// venus
+// 108.2 million km       230
+// earth
+// 149.6 million km       260
+// mars
+// 227.9 million km       330
+// jupiter
+// 778.3 million km       410
+// saturn
+// 1,427.0 million km     490
+// uranus
+// 2,871.0 million km     580
+// neptune
+// 4,497.1 million km     700
+//
+>>>>>>> md-form-2
