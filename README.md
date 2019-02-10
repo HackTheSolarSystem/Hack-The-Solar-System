@@ -10,7 +10,7 @@
     <li>Meg Ray git: meg-ray</li>
     <li>Ruby Reilly git: rubyreilly</li>
     <li>Asha Owens git: anowens</li>
-    <li>Silas Ray git: rubyreilly</li>
+    <li>Silas Ray git: silasray</li>
 <ul>
 
 <h2>Solution</h2>
