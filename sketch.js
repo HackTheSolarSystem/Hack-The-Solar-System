@@ -3,6 +3,14 @@ var stars = [];
 var mercuryDia = 10;
 var sunDiameter = 150;
 var numStars = 1000;
+var marsDistance = 230;
+var jupiterDistance = 320;
+var mercuryDistance=140;
+var venusDistance= 170;
+var earthDistance=200;
+var uranusDistance=420
+var neptuneDistance=470
+var saturnDistance=370
 var mercurySpeed =  (0.02 * -1) * (12 / 8);
 var venousSpeed = (0.02 * -1) * (12 / 7);
 var earthSpeed = (0.02 * -1)
@@ -55,41 +63,38 @@ function createSun() {
 };
 
 function createMercury() {
-    let distance = 140
     let diameter = 20
     var c = color(128,128,128);
     let s = mercurySpeed
-    var mercury = new planet(c, distance, diameter, s, "Mercury");
+    var mercury = new planet(c, mercuryDistance, diameter, s, "Mercury");
 
     this.planets.push(mercury);
 };
 
 function createVenus() {
-   let distance = 170
+
    let diameter = 25
     var c = color(255,179,102);
     let s = venousSpeed
-    var venus = new planet(c, distance, diameter, s, "Venus");
+    var venus = new planet(c, venusDistance, diameter, s, "Venus");
 
     this.planets.push(venus);
 };
 
 function createEarth() {
-    let distance = 200
     let diameter = 30
     var c = color(102,179,255);
-    let earth = new planet(c, distance, diameter, earthSpeed, "Earth");
+    let earth = new planet(c, earthDistance, diameter, earthSpeed, "Earth");
     earth.addMediumMoon();
 
     this.planets.push(earth);
 }
 
 function createMars() {
-    let distance = 230
     let diameter = 16.25
     var c = color(255,102,102);
     let s = marsSpeed
-    var mars = new planet(c, distance, diameter, s, "Mars");
+    var mars = new planet(c, marsDistance, diameter, s, "Mars");
     mars.addMediumMoon();
     mars.addMediumMoon();
     this.planets.push(mars);
@@ -97,14 +102,11 @@ function createMars() {
 
 function createJupiter() {
   let jupiterDiameter = mercuryDia*29.27
-    var c = color(204,102,0);
-    let s = earthSpeed / 12*3;
-    var jupiter = new planet(c, 320, 230/6, s);
     let distance = 320
     let diameter = 71.66
     var c = color(204,102,0);
     let s = jupiterSpeed;
-    var jupiter = new planet(c, distance, diameter, s, "Jupiter");
+    var jupiter = new planet(c,jupiterDistance, diameter, s, "Jupiter");
     jupiter.addMoon();
     jupiter.addMoon();
     jupiter.addMoon();
@@ -115,11 +117,10 @@ function createJupiter() {
 }
 
 function createSaturn() {
-    let distance = 370
     let diameter = 51
     var c = color(230, 255, 153);
     let s = saturnSpeed
-    var saturn = new planet(c, distance, diameter, s, "Saturn");
+    var saturn = new planet(c, saturnDistance, diameter, s, "Saturn");
     saturn.addSmallMoon();
     saturn.addSmallMoon();
     saturn.addSmallMoon();
@@ -130,13 +131,10 @@ function createSaturn() {
 }
 
 function createUranus() {
-    let distance = 420
     let diameter = 38
     var c = color(0, 153, 204);
-    let s = earthSpeed / 84*3;
-    var uranus = new planet(c, 420, 180/6, s);
     let s = uranusSpeed;
-    var uranus = new planet(c, distance, diameter, s, "Uranus");
+    var uranus = new planet(c, uranusDistance, diameter, s, "Uranus");
     uranus.addSmallMoon();
     uranus.addSmallMoon();
     uranus.addSmallMoon();
@@ -145,11 +143,11 @@ function createUranus() {
 }
 
 function createNeptune() {
-    let distance = 470
+
     let diameter = 33.66
     var c = color(0, 51, 204);
     let s = neptuneSpeed;
-    var neptune = new planet(c, distance, diameter, s, "Neptune");
+    var neptune = new planet(c, neptuneDistance, diameter, s, "Neptune");
     neptune.addSmallMoon();
     neptune.addSmallMoon();
     neptune.addSmallMoon();
@@ -179,6 +177,10 @@ function draw() {
 
 }
 
+function switchStatement(givenValue){
+
+}
+
 
 document.addEventListener("DOMContentLoaded", function(event) {
       let planetsSelect = document.getElementById('planets')
@@ -187,33 +189,136 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
       let submitButton = document.getElementById('mass-form')
       //function to take in planet selected for mass change
-      function planetForm(e){
-          // console.log(e.target.value)
-
-      }
-      //mass change form
-      function massForm(e){
-          // console.log(e.target.value)
-
-      }
-      function distanceForm(e){
-          // console.log(e.target.value)
-
-      }
-
-      function submitMassForm(e){
-          e.preventDefault()
-          let planetValues = planetsSelect.value
-          let planetMass = mass.value
-
-          let planetDist = distance.value
-          if(planetMass > 1000){
-            alert("The mass must be under 1000")
-            document.getElementById('mass').value = ""
+      document.getElementById('planets').addEventListener("change",function(e) {
+          switch(e.target.value){
+            case "Earth":
+                distance.value = earthDistance
+              break;
+            case "Mercury":
+              distance.value = mercuryDistance
+              break;
+            case "Venus":
+              distance.value = venusDistance
+              break;
+            case "Mars":
+              distance.value = marsDistance
+              break;
+            case "Neptune":
+                distance.value = neptuneDistance
+              break;
+            case "Jupiter":
+              distance.value = jupiterDistance
+              break;
+            case "Uranus":
+              distance.value = uranusDistance
+              break;
+            case "Saturn":
+              distance.value = saturnDistance
+              break;
+            default:
+              distance.value = 0
+              break;
           }
 
-          // debugger
-          console.log(planetMass,planet,planetDist)
+
+
+      })
+      function submitMassForm(e){
+          e.preventDefault()
+          let newDiameter;
+          let newSpeed;
+          let planetValues = planetsSelect.value
+          let planetMass = mass.value
+          let planetDist = distance.value
+
+          if(planetMass > 1000 || planetMass < 0){
+            alert("Please enter a Mass between 0 and 1000")
+            document.getElementById('mass').value = ""
+
+          }else if(planetValues === "Select Planet"){
+            alert("Please select a planet")
+          }else if(planetDist < 0 || planetDist > 999){
+            alert("Please enter a distance between 0 and 500")
+          }else{
+
+          switch(planetValues){
+            case "Earth":
+                newDiameter = 30
+                earthDistance = distance.value*.20
+                newSpeed = (earthSpeed- planetDist)/10
+                c = color(102,179,255);
+                newEarth = new planet(c, earthDistance, newDiameter, newSpeed/4 , "Earth");
+                planets.splice(3,1)
+                planets.splice(3,0,newEarth)
+              break;
+            case "Mercury":
+                newDiameter = 20
+                mercuryDistance = distance.value*.20
+                newSpeed = (mercurySpeed- planetDist)/10
+                c = color(128,128,128);
+                newEarth = new planet(c, mercuryDistance, newDiameter, newSpeed/4 , "Mercury");
+                planets.splice(1,1)
+                planets.splice(1,0,newEarth)
+                break;
+            case "Venus":
+                newDiameter = 25
+                venusDistance = distance.value*.20
+                newSpeed = (venusSpeed- planetDist)/10
+                c = color(255,179,102);
+                newEarth = new planet(c, venusDistance, newDiameter, newSpeed/4 , "Venus");
+                planets.splice(2,1)
+                planets.splice(2,0,newEarth)
+              break;
+            case "Mars":
+                newDiameter = 16.25
+                marsDistance = distance.value*.20
+                newSpeed = (marsSpeed- planetDist)/10
+                c = color(255,102,102);
+                newEarth = new planet(c, marsDistance, newDiameter, newSpeed/4 , "Mars");
+                planets.splice(4,1)
+                planets.splice(4,0,newEarth)
+              break;
+                case "Neptune":
+                newDiameter = 38
+                neptuneDistance = distance.value*.20
+                newSpeed = (neptuneSpeed- planetDist)/10
+                c = color(0,51,204);
+                newEarth = new planet(c, neptuneDistance, newDiameter, newSpeed/4 , "Neptune");
+                planets.splice(8,1)
+                planets.splice(8,0,newEarth)
+              break;
+            case "Jupiter":
+                newDiameter = 71.66
+                jupiterDistance = distance.value*.20
+                newSpeed = (jupiterSpeed- planetDist)/10
+                c = color(204,102,0);
+                newEarth = new planet(c, jupiterDistance, newDiameter, newSpeed/4 , "Jupiter");
+                planets.splice(5,1)
+                planets.splice(5,0,newEarth)
+              break;
+            case "Uranus":
+                newDiameter = 38
+                uranusDistance = distance.value*.20
+                newSpeed = (uranusSpeed - planetDist)/10
+                c = color(0,153,204);
+                newEarth = new planet(c, uranusDistance, newDiameter, newSpeed/4 , "Uranus");
+                planets.splice(7,1)
+                planets.splice(7,0,newEarth)
+              break;
+            case "Saturn":
+                newDiameter = 51
+                saturnDistance = distance.value*.20
+                newSpeed = (saturnSpeed- planetDist)/10
+                c = color(230,255,153);
+                newEarth = new planet(c, saturnDistance, newDiameter, newSpeed/4 , "Saturn");
+                planets.splice(6,1)
+                planets.splice(6,0,newEarth)
+              break;
+            default:
+              console.log("Default")
+              break;
+          }
+        }
       }
 
 
@@ -222,9 +327,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
           console.log(e.target.value)
       }
 
-      // planetsSelect.addEventListener('change',planetForm)
-      // mass.addEventListener('change',massForm)
-      // distance.addEventListener('change',distanceForm)
       submitButton.addEventListener('submit',submitMassForm)
 })
 
