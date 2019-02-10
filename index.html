@@ -6,11 +6,31 @@
     <script src="sketch.js"></script>
     <script src="planet.js"></script>
     <script src="star.js"></script>
-    <script src="astros.js"></script>
+
+	<script src="form.js"></script>
 
     <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
   <style> body {padding: 0; margin: 0;} </style>
   </head>
   <body>
+	 	<div class = "form-container">
+			<form id = "mass-form">
+				<label>Select a planet to change its mass:</label>
+				<select id ="planets">
+					<option>Jupiter</option>
+					<option>Saturn</option>
+					<option>Uranus</option>
+					<option>Neptune</option>
+					<option>Earth</option>
+					<option>Venus</option>
+					<option>Mercury</option>
+					<option>Pluto</option>
+				</select>
+				<label> Enter the Mass: </label>
+					<input type="number" id = "mass"/>
+				<input id="submit-btn" type="submit" value="Submit">
+			</form>
+		</div>
+
   </body>
 </html>
