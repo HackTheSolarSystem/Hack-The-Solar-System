@@ -1,1 +1,30 @@
+label{
+  font-size: 30px;
+  margin-bottom: 40px;
+}
 
+input{
+  font-size: 25px;
+}
+
+html{
+  background-color: teal;
+}
+
+.btn{
+  font-size: 25px;
+  background-color: blue;
+  color: white;
+}
+
+.btn:hover{
+  background-color: black;
+}
+
+.form-container{
+  text-align: center;
+}
+
+.padding-class{
+  margin: 20px;
+}
