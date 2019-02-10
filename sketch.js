@@ -72,7 +72,7 @@ function createEarth() {
     let diameter = 30
     var c = color(102,179,255);
     let earth = new planet(c, distance, diameter, earthSpeed*2);
-    earth.addMoon();
+    earth.addMediumMoon();
 
     this.planets.push(earth);
 }
@@ -83,8 +83,8 @@ function createMars() {
     var c = color(255,102,102);
     let s = earthSpeed / 2;
     var mars = new planet(c, distance, diameter, s);
-    mars.addSmallMoon();
-    mars.addSmallMoon();
+    mars.addMediumMoon();
+    mars.addMediumMoon();
     this.planets.push(mars);
 }
 

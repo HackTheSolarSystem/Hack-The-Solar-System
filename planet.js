@@ -24,6 +24,14 @@ function planet(c, d, r, s) {
         moons.push(moon);
     };
 
+    this.addMediumMoon = function() {
+        var md = distance / random(8,6);
+        var mr = radius / random(9,3);
+        var ms = speed * random(1, 4);
+        var moon = new planet(250, md+4, mr, ms);
+        moons.push(moon);
+    };
+
     this.update = function() {
         angle += speed;
     }
