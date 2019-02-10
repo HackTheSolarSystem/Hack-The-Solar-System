@@ -148,22 +148,3 @@ function draw() {
     })
 
 }
-
-
-// mercury
-// 57.9 million km        200
-// venus
-// 108.2 million km       230
-// earth
-// 149.6 million km       260
-// mars
-// 227.9 million km       330
-// jupiter
-// 778.3 million km       410
-// saturn
-// 1,427.0 million km     490
-// uranus
-// 2,871.0 million km     580
-// neptune
-// 4,497.1 million km     700
-//
