@@ -2,7 +2,6 @@ function planet(c, d, r, s) {
     var colour = c;
     var distance = d;
     var radius = r;
-    var x
 
     var angle = TWO_PI;
     var speed = s;

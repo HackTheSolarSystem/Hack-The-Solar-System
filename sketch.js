@@ -144,6 +144,7 @@ function createNeptune() {
 }
 
 function mousePressed(event) {
+  debugger
   planets.forEach(planet => {
     planet.showDetails()
   })
