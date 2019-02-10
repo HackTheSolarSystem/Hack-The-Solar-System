@@ -14,10 +14,10 @@
   <style> body {padding: 0; margin: 0;} </style>
   </head>
   <body>
-	 	<div class = "form-container">
+	 	<div class = "form-container padding-class">
 			<form id = "mass-form">
 				<label>Select a planet to change its mass:</label>
-				<select id ="planets">
+				<select id ="planets" class="btn">
           <option>Select Planet</option>
 					<option>Jupiter</option>
 					<option>Saturn</option>
@@ -28,17 +28,16 @@
 					<option>Mercury</option>
 					<option>Mars</option>
 				</select>
-				<label> Enter the Mass: </label>
-					<input type="number" id = "mass"/>
+        <br/>
+				<label class="label  padding-class"> Enter the Mass: </label>
+					<input type="number" id = "mass" class="padding-class"/>
                     <br/>
-
-
-				<label> Enter the Distance: </label>
-					<input type="number" id = "distance"/>
+				<label class="label"> Enter the Distance: </label>
+					<input type="number" class="padding-class" id = "distance"/>
                 <br/>
-				<input id="submit-btn" type="submit" value="Submit">
+				<input id="submit-btn" type="submit" value="Submit" class="btn  padding-class">
 			</form>
 		</div>
-
   </body>
+  <link rel="stylesheet" href="index.css">
 </html>

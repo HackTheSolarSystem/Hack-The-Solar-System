@@ -72,7 +72,6 @@ function createMercury() {
     var c = color(128,128,128);
     let s = mercurySpeed
     var mercury = new planet(c, mercuryDistance, diameter, s, "Mercury");
-    debugger
     this.planets.push(mercury);
 };
 
