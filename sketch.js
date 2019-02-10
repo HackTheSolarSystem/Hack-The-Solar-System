@@ -4,14 +4,12 @@ var mercuryDia = 10;
 var sunDiameter = 150;
 var numStars = 1000;
 var earthSpeed = 0.02 * -1;
-
-let asteroids = []
+let asteroids = [];
 
 function setup() {
     createCanvas(window.innerWidth,window.innerHeight)
     createPlanets()
     generateAsteroidBelt()
-
 
     for(var i = 0; i < numStars; i++) {
         this.stars.push(new star());
@@ -21,14 +19,14 @@ function setup() {
 function generateAsteroidBelt() {
     let n = 500
     for (var i = 0; i < n; i++) {
-        let a = new Astro({
+        let asteroidBelt = new Astro({
             name: `Asteroid ${i+1}`,
             distance: random(250, 275),
             radius: random(1, 1.5),
             color: [255, 255, 255],
             period: random(-.01, .01)
         })
-        asteroids.push(a)
+        asteroids.push(asteroidBelt)
     }
 }
 
@@ -78,7 +76,7 @@ function createEarth() {
 }
 
 function createMars() {
-  let marsDiameter = mercuryDia*1.39
+    let marsDiameter = mercuryDia*1.39
     var c = color(255,102,102);
     let s = earthSpeed / 2;
     var mars = new planet(c, 230, 65/4, s);
