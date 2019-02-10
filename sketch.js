@@ -9,14 +9,14 @@ let asteroids = [];
 function setup() {
     createCanvas(window.innerWidth,window.innerHeight)
     createPlanets()
-    generateAsteroidBelt()
+    createAsteroidBelt()
 
     for(var i = 0; i < numStars; i++) {
         this.stars.push(new star());
     };
 }
 
-function generateAsteroidBelt() {
+function createAsteroidBelt() {
     for (var i = 0; i < 500; i++) {
         let asteroidBelt = new Astro({
             name: `Asteroid ${i+1}`,
