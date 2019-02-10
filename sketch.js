@@ -4,6 +4,8 @@ var stars = [];
 var numStars = 1000;
 var earthSpeed = 0.02 * -1;
 
+let asteroids = []
+
 function setup() {
     createCanvas(window.innerWidth,window.innerHeight);
     createSun();
@@ -16,9 +18,26 @@ function setup() {
     createUranus();
     createNeptune();
 
+    generateAsteroidBelt()
+
+
     for(var i = 0; i < numStars; i++) {
         this.stars.push(new star());
     };
+}
+
+function generateAsteroidBelt() {
+    let n = 500
+    for (var i = 0; i < n; i++) {
+        let a = new Astro({
+            name: `Asteroid ${i+1}`,
+            distance: random(175, 200),
+            radius: random(1, 1.5),
+            color: [255, 255, 255],
+            period: random(-.01, .01)
+        })
+        asteroids.push(a)
+    }
 }
 
 function createSun() {
@@ -106,5 +125,11 @@ function draw() {
         this.planets[i].update();
         this.planets[i].show();
     };
+
+
+    asteroids.forEach(a => {
+        a.show()
+        a.orbit()
+    })
 
 }
