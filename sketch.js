@@ -223,6 +223,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
       })
       function submitMassForm(e){
           e.preventDefault()
+          let newDiameter;
+          let newSpeed;
           let planetValues = planetsSelect.value
           let planetMass = mass.value
           let planetDist = distance.value
@@ -233,34 +235,82 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
           }else if(planetValues === "Select Planet"){
             alert("Please select a planet")
-          }else if(planetDist < 0 || planetDist > 500){
+          }else if(planetDist < 0 || planetDist > 999){
             alert("Please enter a distance between 0 and 500")
           }else{
-          let planetName = planetValues
-          switch(planetName){
+
+          switch(planetValues){
             case "Earth":
-                console.log(planetName)
+                newDiameter = 30
+                earthDistance = distance.value*.20
+                newSpeed = (earthSpeed- planetDist)/10
+                c = color(102,179,255);
+                newEarth = new planet(c, earthDistance, newDiameter, newSpeed/4 , "Earth");
+                planets.splice(3,1)
+                planets.splice(3,0,newEarth)
               break;
             case "Mercury":
-              console.log(planetName)
-              break;
+                newDiameter = 20
+                mercuryDistance = distance.value*.20
+                newSpeed = (mercurySpeed- planetDist)/10
+                c = color(128,128,128);
+                newEarth = new planet(c, mercuryDistance, newDiameter, newSpeed/4 , "Mercury");
+                planets.splice(1,1)
+                planets.splice(1,0,newEarth)
+                break;
             case "Venus":
-              console.log(planetName)
+                newDiameter = 25
+                venusDistance = distance.value*.20
+                newSpeed = (venusSpeed- planetDist)/10
+                c = color(255,179,102);
+                newEarth = new planet(c, venusDistance, newDiameter, newSpeed/4 , "Venus");
+                planets.splice(2,1)
+                planets.splice(2,0,newEarth)
               break;
             case "Mars":
-              console.log(planetName)
+                newDiameter = 16.25
+                marsDistance = distance.value*.20
+                newSpeed = (marsSpeed- planetDist)/10
+                c = color(255,102,102);
+                newEarth = new planet(c, marsDistance, newDiameter, newSpeed/4 , "Mars");
+                planets.splice(4,1)
+                planets.splice(4,0,newEarth)
               break;
-            case "Neptune":
-              console.log(planetName)
+                case "Neptune":
+                newDiameter = 38
+                neptuneDistance = distance.value*.20
+                newSpeed = (neptuneSpeed- planetDist)/10
+                c = color(0,51,204);
+                newEarth = new planet(c, neptuneDistance, newDiameter, newSpeed/4 , "Neptune");
+                planets.splice(8,1)
+                planets.splice(8,0,newEarth)
               break;
             case "Jupiter":
-              console.log(planetName)
+                newDiameter = 71.66
+                jupiterDistance = distance.value*.20
+                newSpeed = (jupiterSpeed- planetDist)/10
+                c = color(204,102,0);
+                newEarth = new planet(c, jupiterDistance, newDiameter, newSpeed/4 , "Jupiter");
+                planets.splice(5,1)
+                planets.splice(5,0,newEarth)
               break;
             case "Uranus":
-              console.log(planetName)
+                newDiameter = 38
+                uranusDistance = distance.value*.20
+                newSpeed = (uranusSpeed - planetDist)/10
+                c = color(0,153,204);
+                newEarth = new planet(c, uranusDistance, newDiameter, newSpeed/4 , "Uranus");
+                planets.splice(7,1)
+                planets.splice(7,0,newEarth)
               break;
             case "Saturn":
-              console.log(planetName)
+                newDiameter = 51
+                saturnDistance = distance.value*.20
+                newSpeed = (saturnSpeed- planetDist)/10
+                c = color(230,255,153);
+                newEarth = new planet(c, saturnDistance, newDiameter, newSpeed/4 , "Saturn");
+                planets.splice(6,1)
+                planets.splice(6,0,newEarth)
               break;
             default:
               console.log("Default")
