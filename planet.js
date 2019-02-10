@@ -4,6 +4,8 @@ function planet(c, d, r, s) {
     var radius = r;
 
     var angle = TWO_PI;
+    var x = cos(0)
+    var y = sin(0)
     var speed = s;
 
     var moons = [];

@@ -10,10 +10,13 @@ function setup() {
     createCanvas(window.innerWidth,window.innerHeight)
     createPlanets()
     createAsteroidBelt()
+    createStars()
+}
 
-    for(var i = 0; i < numStars; i++) {
-        this.stars.push(new star());
-    };
+function createStars() {
+  for(var i = 0; i < numStars; i++) {
+      this.stars.push(new star());
+  };
 }
 
 function createAsteroidBelt() {
