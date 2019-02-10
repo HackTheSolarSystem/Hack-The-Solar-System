@@ -83,8 +83,8 @@ function createMars() {
     var c = color(255,102,102);
     let s = earthSpeed / 2;
     var mars = new planet(c, distance, diameter, s);
-    mars.addMoon();
-    mars.addMoon();
+    mars.addSmallMoon();
+    mars.addSmallMoon();
     this.planets.push(mars);
 }
 
@@ -94,6 +94,12 @@ function createJupiter() {
     var c = color(204,102,0);
     let s = earthSpeed / 12*3;
     var jupiter = new planet(c, distance, diameter, s);
+    jupiter.addMoon();
+    jupiter.addMoon();
+    jupiter.addMoon();
+    jupiter.addMoon();
+    jupiter.addMoon();
+    jupiter.addMoon();
     this.planets.push(jupiter);
 }
 
@@ -103,7 +109,12 @@ function createSaturn() {
     var c = color(230, 255, 153);
     let s = earthSpeed / 30*3;
     var saturn = new planet(c, distance, diameter, s);
-
+    saturn.addSmallMoon();
+    saturn.addSmallMoon();
+    saturn.addSmallMoon();
+    saturn.addSmallMoon();
+    saturn.addSmallMoon();
+    saturn.addSmallMoon();
     this.planets.push(saturn);
 }
 
@@ -113,7 +124,10 @@ function createUranus() {
     var c = color(0, 153, 204);
     let s = earthSpeed / 84*3;
     var uranus = new planet(c, distance, diameter, s);
-
+    uranus.addSmallMoon();
+    uranus.addSmallMoon();
+    uranus.addSmallMoon();
+    uranus.addSmallMoon();
     this.planets.push(uranus);
 }
 
@@ -123,7 +137,9 @@ function createNeptune() {
     var c = color(0, 51, 204);
     let s = earthSpeed / 165*3;
     var neptune = new planet(c, distance, diameter, s);
-
+    neptune.addSmallMoon();
+    neptune.addSmallMoon();
+    neptune.addSmallMoon();
     this.planets.push(neptune);
 }
 
