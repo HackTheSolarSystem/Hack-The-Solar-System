@@ -164,8 +164,7 @@ function draw() {
     })
 
 }
-<<<<<<< HEAD
-=======
+
 function hello(){
     console.log(ee.value)
 }
@@ -225,4 +224,3 @@ document.addEventListener("DOMContentLoaded", function(event) {
 // neptune
 // 4,497.1 million km     700
 //
->>>>>>> md-form-2
