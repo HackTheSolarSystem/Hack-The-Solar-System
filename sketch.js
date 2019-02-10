@@ -187,8 +187,39 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
       let submitButton = document.getElementById('mass-form')
       //function to take in planet selected for mass change
-      document.getElementById('planets').addEventListener("change",function() {
-        
+      document.getElementById('planets').addEventListener("change",function(e) {
+          switch(e.target.value){
+            case "Earth":
+                distance.value = earthDistance
+              break;
+            case "Mercury":
+              distance.value = mercuryDistance
+              break;
+            case "Venus":
+              distance.value = venusDistance
+              break;
+            case "Mars":
+              distance.value = marsDistance
+              break;
+            case "Neptune":
+                distance.value = neptuneDistance
+              break;
+            case "Jupiter":
+              distance.value = jupiterDistance
+              break;
+            case "Uranus":
+              distance.value = uranusDistance
+              break;
+            case "Saturn":
+              distance.value = saturnDistance
+              break;
+            default:
+              distance.value = 0
+              break;
+          }
+
+
+
       })
       function submitMassForm(e){
           e.preventDefault()
@@ -208,7 +239,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           let planetName = planetValues
           switch(planetName){
             case "Earth":
-
+                console.log(planetName)
               break;
             case "Mercury":
               console.log(planetName)
