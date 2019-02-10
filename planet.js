@@ -55,7 +55,7 @@ function planet(c, d, r, s, n) {
           text(name, -20, 5);
         } else if (name === "Jupiter") {
           fill(255)
-          text(name, -25, -40);
+          text(name, -25, -45);
         } else if (name === "Saturn") {
           fill(255)
           text(name, -25, -35);
