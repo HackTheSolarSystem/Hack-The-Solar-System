@@ -19,6 +19,16 @@ var jupiterSpeed = (0.02 * -1) / (12*3);
 var saturnSpeed = (0.02 * -1) / 30*3;
 var uranusSpeed = (0.02 * -1) / 84*3;
 var neptuneSpeed = (0.02 * -1) / 165*3;
+
+var mercuryMass = .330
+var venusMass = 4.87
+var earthMass = 5.97
+var marsMass = 0.073
+var jupiterMass = .642
+var saturnMass = 568
+var uranusMass = 86.8
+var neputuneMass = 102
+
 let asteroids = [];
 let ee = document.getElementById("distance")
 function setup() {
@@ -191,27 +201,35 @@ document.addEventListener("DOMContentLoaded", function(event) {
           switch(e.target.value){
             case "Earth":
                 distance.value = earthDistance
+                mass.value = earthMass
               break;
             case "Mercury":
               distance.value = mercuryDistance
+              mass.value = mercuryMass
               break;
             case "Venus":
               distance.value = venusDistance
+              mass.value = venusMass
               break;
             case "Mars":
               distance.value = marsDistance
+              mass.value = marsMass
               break;
             case "Neptune":
                 distance.value = neptuneDistance
+                mass.value = neptuneMass
               break;
             case "Jupiter":
               distance.value = jupiterDistance
+              mass.value = jupiterMass
               break;
             case "Uranus":
               distance.value = uranusDistance
+              mass.value = uranusMass
               break;
             case "Saturn":
               distance.value = saturnDistance
+              mass.value = saturnMass
               break;
             default:
               distance.value = 0
