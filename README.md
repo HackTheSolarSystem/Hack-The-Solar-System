@@ -11,6 +11,7 @@
     <li>Ruby Reilly git: rubyreilly</li>
     <li>Asha Owens git: anowens</li>
     <li>Silas Ray git: silasray</li>
+    <li>Graham Troyer-Joy git: telegraham</li>
 <ul>
 
 <h2>Solution</h2>
