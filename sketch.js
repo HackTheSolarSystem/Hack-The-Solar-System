@@ -70,7 +70,7 @@ function createJupiter() {
   let jupiterDiameter = mercuryDia*29.27
 
     var c = color(204,102,0);
-    let s = earthSpeed / 12*6;
+    let s = earthSpeed / 12*3;
     var jupiter = new planet(c, 320, 230/3, s);
     let txt="lssdjfljsdlf"
     this.planets.push(jupiter);
@@ -79,7 +79,7 @@ function createJupiter() {
 function createSaturn() {
   let saturnDiameter = mercuryDia*27.73
     var c = color(230, 255, 153);
-    let s = earthSpeed / 30*6;
+    let s = earthSpeed / 30*3;
     var saturn = new planet(c, 430, 200/3, s);
 
     this.planets.push(saturn);
@@ -88,7 +88,7 @@ function createSaturn() {
 function createUranus() {
   let uranusDiameter = mercuryDia*10.48;
     var c = color(0, 153, 204);
-    let s = earthSpeed / 84*6;
+    let s = earthSpeed / 84*3;
     var uranus = new planet(c, 570, 180/3, s);
 
     this.planets.push(uranus);
@@ -97,7 +97,7 @@ function createUranus() {
 function createNeptune() {
   let neptuneDiameter = mercuryDia*10.15;
     var c = color(0, 51, 204);
-    let s = earthSpeed / 165*6;
+    let s = earthSpeed / 165*3;
     var neptune = new planet(c, 660, 202/3, s);
 
     this.planets.push(neptune);
