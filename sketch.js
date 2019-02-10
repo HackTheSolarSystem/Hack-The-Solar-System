@@ -11,14 +11,14 @@ var earthDistance=200;
 var uranusDistance=420
 var neptuneDistance=470
 var saturnDistance=370
-var mercurySpeed =  (0.02 * -1) * (12 / 8);
-var venousSpeed = (0.02 * -1) * (12 / 7);
-var earthSpeed = (0.02 * -1)
-var marsSpeed = (0.02 * -1)/2
-var jupiterSpeed = (0.02 * -1) / (12*4);
-var saturnSpeed = (0.02 * -1) / 30*3;
-var uranusSpeed = (0.02 * -1) / 84*3;
-var neptuneSpeed = (0.02 * -1) / 165*3;
+var mercurySpeed =  (0.02 * 1) * (12 / 8);
+var venusSpeed = (0.02 * 1) * (12 / 7);
+var earthSpeed = (0.02 * 1)
+var marsSpeed = (0.02 * 1)/2
+var jupiterSpeed = (0.02 * 1) / (12*4);
+var saturnSpeed = (0.02 * 1) / 30*3;
+var uranusSpeed = (0.02 * 1) / 84*3;
+var neptuneSpeed = (0.02 * 1) / 165*3;
 let asteroids = [];
 
 var mercuryMass = .330
@@ -28,7 +28,7 @@ var marsMass = 0.073
 var jupiterMass = .642
 var saturnMass = 568
 var uranusMass = 86.8
-var neputuneMass = 102
+var neptuneMass = 102
 
 var massConst = Math.pow(10, 24)
 
@@ -91,7 +91,7 @@ function createVenus() {
 
    let diameter = 25
     var c = color(255,179,102);
-    let s = venousSpeed
+    let s = venusSpeed
     var venus = new planet(c, venusDistance, diameter, s, "Venus");
 
     this.planets.push(venus);
@@ -265,73 +265,180 @@ document.addEventListener("DOMContentLoaded", function(event) {
           switch(planetValues){
             case "Earth":
                 newDiameter = 30
-                earthDistance = distance.value
-                newSpeed = (earthSpeed- planetDist)/10
+                let newEarthSpeed;
+                let newEarthDistance;
+                if(parseInt(planetDist)>earthDistance){
+                    newEarthSpeed = earthSpeed
+                    newEarthDistance = earthDistance
+                    newEarthSpeed = earthSpeed
+                    newEarthDistance = (parseInt(planetDist))
+
+                }else{
+                    newEarthSpeed = earthSpeed
+                    newEarthDistance = earthDistance
+                    newEarthSpeed = earthSpeed * 25
+                    newEarthDistance = (parseInt(planetDist))
+
+                }
                 c = color(102,179,255);
-                newEarth = new planet(c, earthDistance, newDiameter, newSpeed/2 , "Earth");
+                newEarth = new planet(c, newEarthDistance, newDiameter, newEarthSpeed , "Earth");
                 planets.splice(3,1)
                 planets.splice(3,0,newEarth)
               break;
             case "Mercury":
                 newDiameter = 20
-                mercuryDistance = distance.value
-                newSpeed = (mercurySpeed- planetDist)/10
+                let newMercDistance;
+                let newMercSpeed;
+                if(parseInt(planetDist)>saturnDistance){
+                    newMercSpeed = mercurySpeed
+                    newMercDistance = mercuryDistance
+                    newMercSpeed = mercurySpeed
+                    newMercDistance = (parseInt(planetDist))
+
+                }else{
+                    newMercSpeed = mercurySpeed
+                    newMercDistance = mercuryDistance
+                    newMercSpeed = mercurySpeed * 25
+                    newMercDistance = (parseInt(planetDist))
+
+                }
                 c = color(128,128,128);
-                newEarth = new planet(c, mercuryDistance, newDiameter, newSpeed/2 , "Mercury");
+                newEarth = new planet(c, newMercDistance, newDiameter, newMercSpeed , "Mercury");
                 planets.splice(1,1)
                 planets.splice(1,0,newEarth)
                 break;
             case "Venus":
                 newDiameter = 25
-                venusDistance = distance.value
-                newSpeed = (venusSpeed- planetDist)/10
+                let newVenusSpeed;
+                let newVenusDistance;
+                if(parseInt(planetDist)>venusDistance){
+                    newVenusSpeed = venusSpeed
+                    newVenusDistance = venusDistance
+                    newVenusSpeed = venusSpeed
+                    newVenusDistance = (parseInt(planetDist))
+
+                }else{
+                    newVenusSpeed = venusSpeed
+                    newVenusDistance = venusDistance
+                    newVenusSpeed = venusSpeed * 25
+                    newVenusDistance = (parseInt(planetDist))
+
+                }
                 c = color(255,179,102);
-                newEarth = new planet(c, venusDistance, newDiameter, newSpeed/2 , "Venus");
+                newEarth = new planet(c, newVenusDistance, newDiameter, newVenusSpeed , "Venus");
                 planets.splice(2,1)
                 planets.splice(2,0,newEarth)
               break;
             case "Mars":
                 newDiameter = 16.25
-                marsDistance = distance.value
-                newSpeed = (marsSpeed- planetDist)/10
+                let newMarsSpeed;
+                let newMarsDistance;
+                if(parseInt(planetDist)>marsDistance){
+                    newMarsSpeed = marsSpeed
+                    newMarsDistance = marsDistance
+                    newMarsSpeed = marsSpeed
+                    newMarsDistance = (parseInt(planetDist))
+
+                }else{
+                    newMarsSpeed = marsSpeed
+                    newMarsDistance = marsDistance
+                    newMarsSpeed = marsSpeed * 25
+                    newMarsDistance = (parseInt(planetDist))
+
+                }
                 c = color(255,102,102);
-                newEarth = new planet(c, marsDistance, newDiameter, newSpeed/2 , "Mars");
+                newEarth = new planet(c, newMarsDistance, newDiameter, newMarsSpeed , "Mars");
                 planets.splice(4,1)
                 planets.splice(4,0,newEarth)
               break;
                 case "Neptune":
                 newDiameter = 38
-                neptuneDistance = distance.value
-                newSpeed = (neptuneSpeed- planetDist)/10
+                let newNeptuneSpeed;
+                let newNeptuneDistance;
+                if(parseInt(planetDist)>neptuneDistance){
+                    newNeptuneSpeed = neptuneSpeed
+                    newNeptuneDistance = neptuneDistance
+                    newNeptuneSpeed = neptuneSpeed
+                    newNeptuneDistance = (parseInt(planetDist))
+
+                }else{
+                    newNeptuneSpeed = neptuneSpeed
+                    newNeptuneDistance = neptuneDistance
+                    newNeptuneSpeed = neptuneSpeed * 40
+                    newNeptuneDistance = (parseInt(planetDist))
+
+                }
                 c = color(0,51,204);
-                newEarth = new planet(c, neptuneDistance, newDiameter, newSpeed/2 , "Neptune");
+                newEarth = new planet(c, newNeptuneDistance, newDiameter, newNeptuneSpeed , "Neptune");
                 planets.splice(8,1)
                 planets.splice(8,0,newEarth)
               break;
             case "Jupiter":
                 newDiameter = 71.66
-                jupiterDistance = distance.value
-                newSpeed = (jupiterSpeed- planetDist)/10
+                let newJupiterSpeed;
+                let newJupiterDistance;
+                if(parseInt(planetDist)>jupiterDistance){
+                    newJupiterSpeed = jupiterSpeed
+                    newJupiterDistance = jupiterDistance
+                    newJupiterSpeed = jupiterSpeed
+                    newJupiterDistance = (parseInt(planetDist))
+
+                }else{
+                    newJupiterSpeed = jupiterSpeed
+                    newJupiterDistance = jupiterDistance
+                    newJupiterSpeed = jupiterSpeed * 25
+                    newJupiterDistance = (parseInt(planetDist))
+
+                }
                 c = color(204,102,0);
-                newEarth = new planet(c, jupiterDistance, newDiameter, newSpeed/2 , "Jupiter");
+                newEarth = new planet(c, newJupiterDistance, newDiameter, newJupiterSpeed, "Jupiter");
                 planets.splice(5,1)
                 planets.splice(5,0,newEarth)
               break;
             case "Uranus":
                 newDiameter = 38
-                uranusDistance = distance.value
-                newSpeed = (uranusSpeed - planetDist)/10
+                let newUranusSpeed;
+                let newUranusDistance;
+                if(parseInt(planetDist)>uranusDistance){
+                    newUranusSpeed = uranusSpeed
+                    newUranusDistance = uranusDistance
+                    newUranusSpeed = uranusSpeed
+                    newUranusDistance = (parseInt(planetDist))
+
+                }else{
+                    newUranusSpeed = uranusSpeed
+                    newUranusDistance = uranusDistance
+                    newUranusSpeed = uranusSpeed * 25
+                    newUranusDistance = (parseInt(planetDist))
+
+                }
                 c = color(0,153,204);
-                newEarth = new planet(c, uranusDistance, newDiameter, newSpeed/2 , "Uranus");
+                newEarth = new planet(c, newUranusDistance, newDiameter, newUranusSpeed , "Uranus");
                 planets.splice(7,1)
                 planets.splice(7,0,newEarth)
               break;
             case "Saturn":
                 newDiameter = 51
-                saturnDistance = distance.value
-                newSpeed = (saturnSpeed- planetDist)/10
+                // saturnDistance = distance.value
+                let newSatSpeed;
+                let newSatDistance;
+                if(parseInt(planetDist)>saturnDistance){
+                    newSatSpeed = saturnSpeed
+                    newSatDistance = saturnDistance
+                    newSatSpeed = saturnSpeed
+                    newSatDistance = (parseInt(planetDist))
+
+                }else{
+                    newSatSpeed = saturnSpeed
+                    newSatDistance = saturnDistance
+                    newSatSpeed = saturnSpeed * 25
+                    newSatDistance = (parseInt(planetDist))
+
+                }
+                // parseInt(planetDist)>saturnDistance ? newSatSpeed = saturnSpeed/8 :newSatSpeed = saturnSpeed * 10
+                // newSpeed = (saturnSpeed- parseInt(planetDist,10))/10
                 c = color(230,255,153);
-                newEarth = new planet(c, saturnDistance, newDiameter, newSpeed/2 , "Saturn");
+                newEarth = new planet(c, newSatDistance, newDiameter, newSatSpeed , "Saturn");
                 planets.splice(6,1)
                 planets.splice(6,0,newEarth)
               break;
