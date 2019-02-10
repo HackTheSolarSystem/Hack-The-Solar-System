@@ -1,8 +1,8 @@
-function planet(c, d, r, s) {
+function planet(c, d, r, s, n) {
     var colour = c;
     var distance = d;
     var radius = r;
-
+    var name = n;
     var angle = TWO_PI;
     var speed = s;
 
@@ -34,6 +34,10 @@ function planet(c, d, r, s) {
 
     this.update = function() {
         angle += speed;
+    }
+
+    this.getName = function() {
+      return name;
     }
 
     this.show = function() {

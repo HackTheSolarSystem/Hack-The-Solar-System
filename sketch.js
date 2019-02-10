@@ -3,7 +3,14 @@ var stars = [];
 var mercuryDia = 10;
 var sunDiameter = 150;
 var numStars = 1000;
-var earthSpeed = 0.02 * -1;
+var mercurySpeed =  (0.02 * -1) * (12 / 8);
+var venousSpeed = (0.02 * -1) * (12 / 7);
+var earthSpeed = (0.02 * -1)
+var marsSpeed = (0.02 * -1)/2
+var jupiterSpeed = (0.02 * -1) / (12*3);
+var saturnSpeed = (0.02 * -1) / 30*3;
+var uranusSpeed = (0.02 * -1) / 84*3;
+var neptuneSpeed = (0.02 * -1) / 165*3;
 let asteroids = [];
 let ee = document.getElementById("distance")
 function setup() {
@@ -51,8 +58,8 @@ function createMercury() {
     let distance = 140
     let diameter = 20
     var c = color(128,128,128);
-    let s = earthSpeed * (12 / 8);
-    var mercury = new planet(c, distance, diameter, s);
+    let s = mercurySpeed
+    var mercury = new planet(c, distance, diameter, s, "Mercury");
 
     this.planets.push(mercury);
 };
@@ -61,8 +68,8 @@ function createVenus() {
    let distance = 170
    let diameter = 25
     var c = color(255,179,102);
-    let s = earthSpeed * (12 / 7);
-    var venus = new planet(c, distance, diameter, s);
+    let s = venousSpeed
+    var venus = new planet(c, distance, diameter, s, "Venus");
 
     this.planets.push(venus);
 };
@@ -71,7 +78,7 @@ function createEarth() {
     let distance = 200
     let diameter = 30
     var c = color(102,179,255);
-    let earth = new planet(c, distance, diameter, earthSpeed*1);
+    let earth = new planet(c, distance, diameter, earthSpeed, "Earth");
     earth.addMediumMoon();
 
     this.planets.push(earth);
@@ -81,8 +88,8 @@ function createMars() {
     let distance = 230
     let diameter = 16.25
     var c = color(255,102,102);
-    let s = earthSpeed / 2;
-    var mars = new planet(c, distance, diameter, s);
+    let s = marsSpeed
+    var mars = new planet(c, distance, diameter, s, "Mars");
     mars.addMediumMoon();
     mars.addMediumMoon();
     this.planets.push(mars);
@@ -92,8 +99,8 @@ function createJupiter() {
     let distance = 320
     let diameter = 71.66
     var c = color(204,102,0);
-    let s = earthSpeed / 12*3;
-    var jupiter = new planet(c, distance, diameter, s);
+    let s = jupiterSpeed;
+    var jupiter = new planet(c, distance, diameter, s, "Jupiter");
     jupiter.addMoon();
     jupiter.addMoon();
     jupiter.addMoon();
@@ -107,8 +114,8 @@ function createSaturn() {
     let distance = 370
     let diameter = 51
     var c = color(230, 255, 153);
-    let s = earthSpeed / 30*3;
-    var saturn = new planet(c, distance, diameter, s);
+    let s = saturnSpeed
+    var saturn = new planet(c, distance, diameter, s, "Saturn");
     saturn.addSmallMoon();
     saturn.addSmallMoon();
     saturn.addSmallMoon();
@@ -122,8 +129,8 @@ function createUranus() {
     let distance = 420
     let diameter = 38
     var c = color(0, 153, 204);
-    let s = earthSpeed / 84*3;
-    var uranus = new planet(c, distance, diameter, s);
+    let s = uranusSpeed;
+    var uranus = new planet(c, distance, diameter, s, "Uranus");
     uranus.addSmallMoon();
     uranus.addSmallMoon();
     uranus.addSmallMoon();
@@ -135,11 +142,12 @@ function createNeptune() {
     let distance = 470
     let diameter = 33.66
     var c = color(0, 51, 204);
-    let s = earthSpeed / 165*3;
-    var neptune = new planet(c, distance, diameter, s);
+    let s = neptuneSpeed;
+    var neptune = new planet(c, distance, diameter, s, "Neptune");
     neptune.addSmallMoon();
     neptune.addSmallMoon();
     neptune.addSmallMoon();
+
     this.planets.push(neptune);
 }
 
@@ -165,33 +173,40 @@ function draw() {
 
 }
 
-function hello(){
-    console.log(ee.value)
-}
+
 document.addEventListener("DOMContentLoaded", function(event) {
-      let planets = document.getElementById('planets')
+      let planetsSelect = document.getElementById('planets')
       let mass = document.getElementById('mass')
       let distance = document.getElementById('distance')
 
       let submitButton = document.getElementById('mass-form')
       //function to take in planet selected for mass change
       function planetForm(e){
-          console.log(e.target.value)
+          // console.log(e.target.value)
+
       }
       //mass change form
       function massForm(e){
-          console.log(e.target.value)
+          // console.log(e.target.value)
+
       }
       function distanceForm(e){
-          console.log(e.target.value)
+          // console.log(e.target.value)
+
       }
 
       function submitMassForm(e){
           e.preventDefault()
-          let planet = planets.value
+          let planetValues = planetsSelect.value
           let planetMass = mass.value
 
           let planetDist = distance.value
+          if(planetMass > 1000){
+            alert("The mass must be under 1000")
+            document.getElementById('mass').value = ""
+          }
+
+          // debugger
           console.log(planetMass,planet,planetDist)
       }
 
@@ -201,9 +216,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
           console.log(e.target.value)
       }
 
-      planets.addEventListener('change',planetForm)
-      mass.addEventListener('change',massForm)
-      distance.addEventListener('change',distanceForm)
+      // planetsSelect.addEventListener('change',planetForm)
+      // mass.addEventListener('change',massForm)
+      // distance.addEventListener('change',distanceForm)
       submitButton.addEventListener('submit',submitMassForm)
 })
 
