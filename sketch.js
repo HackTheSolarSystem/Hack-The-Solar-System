@@ -43,7 +43,7 @@ function createPlanets() {
 
 function createSun() {
     var c = color(255,255,102);
-    let sun = new planet(c, 0, sunDiameter, 0);
+    let sun = new planet(c, 0, sunDiameter, 50);
     this.planets.push(sun);
 };
 
@@ -86,11 +86,9 @@ function createMars() {
 
 function createJupiter() {
   let jupiterDiameter = mercuryDia*29.27
-
     var c = color(204,102,0);
     let s = earthSpeed / 12*3;
     var jupiter = new planet(c, 320, 230/6, s);
-    let txt="lssdjfljsdlf"
     this.planets.push(jupiter);
 }
 
@@ -108,7 +106,6 @@ function createUranus() {
     var c = color(0, 153, 204);
     let s = earthSpeed / 84*3;
     var uranus = new planet(c, 420, 180/6, s);
-
     this.planets.push(uranus);
 }
 

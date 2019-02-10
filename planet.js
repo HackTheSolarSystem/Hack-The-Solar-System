@@ -14,7 +14,14 @@ function planet(c, d, r, s) {
         var ms = speed * random(1, 4);
         var moon = new planet(250, md, mr, ms);
         moons.push(moon);
+
     };
+
+    this.addText = function(planetName) {
+        fill(255);
+        rotate(angle);
+        translate(distance, 0)
+    }
 
     this.update = function() {
         angle += speed;
@@ -27,13 +34,20 @@ function planet(c, d, r, s) {
         rotate(angle);
         translate(distance, 0);
 
+
         ellipse(0,0,radius,radius);
+        text('Planet', 0, 0);
+
 
         for(var m = 0; m < moons.length; m++) {
             moons[m].update();
             moons[m].show();
         };
 
+
+
         pop();
     };
+
+
 };
