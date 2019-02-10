@@ -3,6 +3,14 @@ var stars = [];
 var mercuryDia = 10;
 var sunDiameter = 150;
 var numStars = 1000;
+var marsDistance = 230;
+var jupiterDistance = 320;
+var mercuryDistance=140;
+var venusDistance= 170;
+var earthDistance=200;
+var uranusDistance=420
+var neptuneDistance=470
+var saturnDistance=370
 var mercurySpeed =  (0.02 * -1) * (12 / 8);
 var venousSpeed = (0.02 * -1) * (12 / 7);
 var earthSpeed = (0.02 * -1)
@@ -55,52 +63,48 @@ function createSun() {
 };
 
 function createMercury() {
-    let distance = 140
     let diameter = 20
     var c = color(128,128,128);
     let s = mercurySpeed
-    var mercury = new planet(c, distance, diameter, s, "Mercury");
+    var mercury = new planet(c, mercuryDistance, diameter, s, "Mercury");
 
     this.planets.push(mercury);
 };
 
 function createVenus() {
-   let distance = 170
+
    let diameter = 25
     var c = color(255,179,102);
     let s = venousSpeed
-    var venus = new planet(c, distance, diameter, s, "Venus");
+    var venus = new planet(c, venusDistance, diameter, s, "Venus");
 
     this.planets.push(venus);
 };
 
 function createEarth() {
-    let distance = 200
     let diameter = 30
     var c = color(102,179,255);
-    let earth = new planet(c, distance, diameter, earthSpeed, "Earth");
+    let earth = new planet(c, earthDistance, diameter, earthSpeed, "Earth");
     earth.addMediumMoon();
 
     this.planets.push(earth);
 }
 
 function createMars() {
-    let distance = 230
     let diameter = 16.25
     var c = color(255,102,102);
     let s = marsSpeed
-    var mars = new planet(c, distance, diameter, s, "Mars");
+    var mars = new planet(c, marsDistance, diameter, s, "Mars");
     mars.addMediumMoon();
     mars.addMediumMoon();
     this.planets.push(mars);
 }
 
 function createJupiter() {
-    let distance = 320
     let diameter = 71.66
     var c = color(204,102,0);
     let s = jupiterSpeed;
-    var jupiter = new planet(c, distance, diameter, s, "Jupiter");
+    var jupiter = new planet(c,jupiterDistance, diameter, s, "Jupiter");
     jupiter.addMoon();
     jupiter.addMoon();
     jupiter.addMoon();
@@ -111,11 +115,10 @@ function createJupiter() {
 }
 
 function createSaturn() {
-    let distance = 370
     let diameter = 51
     var c = color(230, 255, 153);
     let s = saturnSpeed
-    var saturn = new planet(c, distance, diameter, s, "Saturn");
+    var saturn = new planet(c, saturnDistance, diameter, s, "Saturn");
     saturn.addSmallMoon();
     saturn.addSmallMoon();
     saturn.addSmallMoon();
@@ -126,11 +129,10 @@ function createSaturn() {
 }
 
 function createUranus() {
-    let distance = 420
     let diameter = 38
     var c = color(0, 153, 204);
     let s = uranusSpeed;
-    var uranus = new planet(c, distance, diameter, s, "Uranus");
+    var uranus = new planet(c, uranusDistance, diameter, s, "Uranus");
     uranus.addSmallMoon();
     uranus.addSmallMoon();
     uranus.addSmallMoon();
@@ -139,11 +141,11 @@ function createUranus() {
 }
 
 function createNeptune() {
-    let distance = 470
+
     let diameter = 33.66
     var c = color(0, 51, 204);
     let s = neptuneSpeed;
-    var neptune = new planet(c, distance, diameter, s, "Neptune");
+    var neptune = new planet(c, neptuneDistance, diameter, s, "Neptune");
     neptune.addSmallMoon();
     neptune.addSmallMoon();
     neptune.addSmallMoon();
@@ -173,6 +175,10 @@ function draw() {
 
 }
 
+function switchStatement(givenValue){
+
+}
+
 
 document.addEventListener("DOMContentLoaded", function(event) {
       let planetsSelect = document.getElementById('planets')
@@ -181,33 +187,55 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
       let submitButton = document.getElementById('mass-form')
       //function to take in planet selected for mass change
-      function planetForm(e){
-          // console.log(e.target.value)
-
-      }
-      //mass change form
-      function massForm(e){
-          // console.log(e.target.value)
-
-      }
-      function distanceForm(e){
-          // console.log(e.target.value)
-
-      }
-
+      document.getElementById('planets').addEventListener("change",function() {
+        
+      })
       function submitMassForm(e){
           e.preventDefault()
           let planetValues = planetsSelect.value
           let planetMass = mass.value
-
           let planetDist = distance.value
-          if(planetMass > 1000){
-            alert("The mass must be under 1000")
-            document.getElementById('mass').value = ""
-          }
 
-          // debugger
-          console.log(planetMass,planet,planetDist)
+          if(planetMass > 1000 || planetMass < 0){
+            alert("Please enter a Mass between 0 and 1000")
+            document.getElementById('mass').value = ""
+
+          }else if(planetValues === "Select Planet"){
+            alert("Please select a planet")
+          }else if(planetDist < 0 || planetDist > 500){
+            alert("Please enter a distance between 0 and 500")
+          }else{
+          let planetName = planetValues
+          switch(planetName){
+            case "Earth":
+
+              break;
+            case "Mercury":
+              console.log(planetName)
+              break;
+            case "Venus":
+              console.log(planetName)
+              break;
+            case "Mars":
+              console.log(planetName)
+              break;
+            case "Neptune":
+              console.log(planetName)
+              break;
+            case "Jupiter":
+              console.log(planetName)
+              break;
+            case "Uranus":
+              console.log(planetName)
+              break;
+            case "Saturn":
+              console.log(planetName)
+              break;
+            default:
+              console.log("Default")
+              break;
+          }
+        }
       }
 
 
@@ -216,9 +244,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
           console.log(e.target.value)
       }
 
-      // planetsSelect.addEventListener('change',planetForm)
-      // mass.addEventListener('change',massForm)
-      // distance.addEventListener('change',distanceForm)
       submitButton.addEventListener('submit',submitMassForm)
 })
 
