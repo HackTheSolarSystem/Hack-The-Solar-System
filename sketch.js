@@ -51,7 +51,7 @@ function createMercury() {
     let distance = 140
     let diameter = 20
     var c = color(128,128,128);
-    let s = earthSpeed * (12 / 3);
+    let s = earthSpeed * (12 / 8);
     var mercury = new planet(c, distance, diameter, s);
 
     this.planets.push(mercury);
@@ -71,7 +71,7 @@ function createEarth() {
     let distance = 200
     let diameter = 30
     var c = color(102,179,255);
-    let earth = new planet(c, distance, diameter, earthSpeed*2);
+    let earth = new planet(c, distance, diameter, earthSpeed*1);
     earth.addMediumMoon();
 
     this.planets.push(earth);
