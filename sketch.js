@@ -8,17 +8,8 @@ var earthSpeed = 0.02 * -1;
 let asteroids = []
 
 function setup() {
-    createCanvas(window.innerWidth,window.innerHeight);
-    createSun();
-    createMercury();
-    createVenus();
-    createEarth();
-    createMars();
-    createJupiter();
-    createSaturn();
-    createUranus();
-    createNeptune();
-
+    createCanvas(window.innerWidth,window.innerHeight)
+    createPlanets()
     generateAsteroidBelt()
 
 
@@ -39,6 +30,18 @@ function generateAsteroidBelt() {
         })
         asteroids.push(a)
     }
+}
+
+function createPlanets() {
+  createSun();
+  createMercury();
+  createVenus();
+  createEarth();
+  createMars();
+  createJupiter();
+  createSaturn();
+  createUranus();
+  createNeptune();
 }
 
 function createSun() {
