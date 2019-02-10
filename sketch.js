@@ -127,6 +127,12 @@ function createNeptune() {
     this.planets.push(neptune);
 }
 
+function mousePressed(event) {
+  planets.forEach(planet => {
+    planet.showDetails()
+  })
+}
+
 function draw() {
     background(52);
     translate(width/2, height/2);

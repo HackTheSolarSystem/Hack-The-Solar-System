@@ -2,6 +2,7 @@ function planet(c, d, r, s) {
     var colour = c;
     var distance = d;
     var radius = r;
+    var x
 
     var angle = TWO_PI;
     var speed = s;
@@ -36,4 +37,11 @@ function planet(c, d, r, s) {
 
         pop();
     };
+
+    this.showDetails = function() {
+      var mouseDistance = dist(mouseX, mouseY, this.x, this.y)
+      if (mouseDistance < d) {
+        console.log("Inside")
+      }
+    }
 };
