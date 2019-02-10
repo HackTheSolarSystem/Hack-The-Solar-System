@@ -21,8 +21,11 @@ var uranusSpeed = (0.02 * -1) / 84*3;
 var neptuneSpeed = (0.02 * -1) / 165*3;
 let asteroids = [];
 let ee = document.getElementById("distance")
+let fontsize = 16;
 function setup() {
     createCanvas(window.innerWidth,window.innerHeight)
+    textSize(fontsize);
+    textAlign(LEFT,BOTTOM)
     createPlanets()
     createAsteroidBelt()
 
@@ -58,7 +61,7 @@ function createPlanets() {
 
 function createSun() {
     var c = color(255,255,102);
-    let sun = new planet(c, 0, sunDiameter, 50);
+    let sun = new planet(c, 0, sunDiameter, 0, "Sun");
     this.planets.push(sun);
 };
 
