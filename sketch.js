@@ -32,7 +32,7 @@ function generateAsteroidBelt() {
     for (var i = 0; i < n; i++) {
         let a = new Astro({
             name: `Asteroid ${i+1}`,
-            distance: random(140, 150),
+            distance: random(325, 375),
             radius: random(1, 1.5),
             color: [255, 255, 255],
             period: random(-.01, .01)
