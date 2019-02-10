@@ -48,75 +48,81 @@ function createSun() {
 };
 
 function createMercury() {
-    let mercuryDiameter = mercuryDia
+    let distance = 140
+    let diameter = 20
     var c = color(128,128,128);
     let s = earthSpeed * (12 / 3);
-    var mercury = new planet(c, 140, 40/2, s);
+    var mercury = new planet(c, distance, diameter, s);
 
     this.planets.push(mercury);
 };
 
 function createVenus() {
-   let venusDiameter = mercuryDia*2.48
+   let distance = 170
+   let diameter = 25
     var c = color(255,179,102);
     let s = earthSpeed * (12 / 7);
-    var venus = new planet(c, 170, 100/4, s);
+    var venus = new planet(c, distance, diameter, s);
 
     this.planets.push(venus);
 };
 
 function createEarth() {
-  let earthDiameter = mercuryDia*2.62
+    let distance = 200
+    let diameter = 30
     var c = color(102,179,255);
-    let earth = new planet(c, 200, 120/4, earthSpeed*2);
+    let earth = new planet(c, distance, diameter, earthSpeed*2);
     earth.addMoon();
 
     this.planets.push(earth);
 }
 
 function createMars() {
-    let marsDiameter = mercuryDia*1.39
+    let distance = 230
+    let diameter = 16.25
     var c = color(255,102,102);
     let s = earthSpeed / 2;
-    var mars = new planet(c, 230, 65/4, s);
+    var mars = new planet(c, distance, diameter, s);
     mars.addMoon();
     mars.addMoon();
     this.planets.push(mars);
 }
 
 function createJupiter() {
-  let jupiterDiameter = mercuryDia*29.27
-
+    let distance = 320
+    let diameter = 71.66
     var c = color(204,102,0);
     let s = earthSpeed / 12*3;
-    var jupiter = new planet(c, 320, 230/6, s);
-    let txt="lssdjfljsdlf"
+    var jupiter = new planet(c, distance, diameter, s);
     this.planets.push(jupiter);
 }
 
 function createSaturn() {
-  let saturnDiameter = mercuryDia*27.73
+    let distance = 370
+    let diameter = 51
     var c = color(230, 255, 153);
     let s = earthSpeed / 30*3;
-    var saturn = new planet(c, 370, 200/6, s);
+    var saturn = new planet(c, distance, diameter, s);
 
     this.planets.push(saturn);
 }
 
 function createUranus() {
-  let uranusDiameter = mercuryDia*10.48;
+    let distance = 420
+    let diameter = 38
     var c = color(0, 153, 204);
     let s = earthSpeed / 84*3;
-    var uranus = new planet(c, 420, 180/6, s);
+    var uranus = new planet(c, distance, diameter, s);
 
     this.planets.push(uranus);
 }
 
 function createNeptune() {
-  let neptuneDiameter = mercuryDia*10.15;
+    let distance = 470
+    let diameter = 33.66
     var c = color(0, 51, 204);
     let s = earthSpeed / 165*3;
-    var neptune = new planet(c, 470, 202/6, s);
+    var neptune = new planet(c, distance, diameter, s);
 
     this.planets.push(neptune);
 }
