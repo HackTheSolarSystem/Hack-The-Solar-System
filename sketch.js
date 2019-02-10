@@ -17,8 +17,7 @@ function setup() {
 }
 
 function generateAsteroidBelt() {
-    let n = 500
-    for (var i = 0; i < n; i++) {
+    for (var i = 0; i < 500; i++) {
         let asteroidBelt = new Astro({
             name: `Asteroid ${i+1}`,
             distance: random(250, 275),
