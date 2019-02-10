@@ -6,6 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.min.js"></script>
+    <script src="formtoggle.js"></script>
     <script src="sketch.js"></script>
     <script src="planet.js"></script>
     <script src="star.js"></script>
@@ -17,8 +18,9 @@
   <style> body {padding: 0; margin: 0;} </style>
   </head>
   <body>
-	 	<div class = "form-container padding-class">
-			<form id = "mass-form">
+    <button class="edit-planets js-edit-planets">&#x2B23;</button>
+	 	<div class="form-container js-form-container">
+			<form id="mass-form">
 				<label>Select a planet to change its mass:</label>
 				<select id ="planets" class="btn">
           <option>Select Planet</option>

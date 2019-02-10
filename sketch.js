@@ -196,6 +196,8 @@ function draw() {
 
 
 document.addEventListener("DOMContentLoaded", function(event) {
+
+      setupFormToggle()
       let planetsSelect = document.getElementById('planets')
       let mass = document.getElementById('mass')
       let distance = document.getElementById('distance')
@@ -246,6 +248,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       })
       function submitMassForm(e){
           e.preventDefault()
+          
           let newDiameter;
           let newSpeed;
           let planetValues = planetsSelect.value
@@ -261,7 +264,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           }else if(planetDist < 0 || planetDist > 999){
             alert("Please enter a distance between 0 and 500")
           }else{
-
+            hideForm()
           switch(planetValues){
             case "Earth":
                 newDiameter = 30
@@ -457,6 +460,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
       submitButton.addEventListener('submit',submitMassForm)
 })
+
 
 // mercury
 // 57.9 million km        200
