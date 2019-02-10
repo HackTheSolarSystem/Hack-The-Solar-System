@@ -22,6 +22,7 @@ var neptuneSpeed = (0.02 * -1) / 165*3;
 let asteroids = [];
 let ee = document.getElementById("distance")
 let fontsize = 16;
+
 function setup() {
     createCanvas(window.innerWidth,window.innerHeight)
     textSize(fontsize);
@@ -33,6 +34,7 @@ function setup() {
         this.stars.push(new star());
     };
 }
+
 
 function createAsteroidBelt() {
     for (var i = 0; i < 500; i++) {
@@ -70,7 +72,7 @@ function createMercury() {
     var c = color(128,128,128);
     let s = mercurySpeed
     var mercury = new planet(c, mercuryDistance, diameter, s, "Mercury");
-
+    debugger
     this.planets.push(mercury);
 };
 
@@ -180,9 +182,6 @@ function draw() {
 
 }
 
-function switchStatement(givenValue){
-
-}
 
 
 document.addEventListener("DOMContentLoaded", function(event) {
